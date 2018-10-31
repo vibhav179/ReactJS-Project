@@ -1,8 +1,8 @@
 import React from 'react';
 
 class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor(story) {
+    super(story);
     this.state = {
       error: null,
       isLoaded: false,
@@ -11,7 +11,7 @@ class MyComponent extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://api.example.com/items")
+    fetch("https://hacker-news.firebaseio.com/v0/item/<id>")
       .then(res => res.json())
       .then(
         (result) => {
